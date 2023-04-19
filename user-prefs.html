@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="css/main.css"
+    />
+
+    <title>User Preferences</title>
+  </head>
+
+  <body onload="onInit()">
+    <h1>User Preferences</h1>
+    <h2>
+      <a href="index.html">Back to main page</a>
+    </h2>
+    <h2>
+      <a href="map.html">Map</a>
+    </h2>
+
+    <datalist id="contactList">
+      <option
+        value="puky@puk.com"
+        label="Puki"
+      />
+      <option
+        value="support@example.com"
+        label="Support"
+      />
+      <option
+        value="admin@example.com"
+        label="Administrator"
+      />
+    </datalist>
+
+    <form
+      id="User-Prefs"
+      onsubmit="onSubmit(event)"
+    >
+      <table>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td>
+            <input
+              minlength="3"
+              required
+              type="text"
+              id="name"
+              name="fullName"
+              placeholder="First and last name"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="email">E-mail:</label></td>
+          <td>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your Email"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="age">Age:</label></td>
+          <td>
+            <input
+              type="range"
+              id="age"
+              name="age"
+              step="1"
+              min="18"
+              max="120"
+              value="33"
+              oninput="showAge(this.value)"
+            />
+            <span id="sAge">33</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <h2>colors:</h2>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="bgColor">Background color:</label></td>
+          <td>
+            <input
+              type="color"
+              id="bgColor"
+              name="bgColor"
+              value="#ff0000"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="bgImg">Select Background images:</label></td>
+          <td>
+            <input
+              type="file"
+              id="bgImg"
+              name="bgImg"
+              multiple
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="txtColor">Text color:</label></td>
+          <td>
+            <input
+              type="color"
+              id="txtColor"
+              name="txtColor"
+              value="#ff0000"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="zoom">Zoom Factor:</label></td>
+          <td>
+            <input
+              type="range"
+              id="zoom"
+              name="zoom"
+              step="1"
+              min="1"
+              max="21"
+              value="16"
+              oninput="showZoom(this.value)"
+            />
+            <span id="sZoom">16</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="birthDate">Date of Birth:</label></td>
+          <td>
+            <input
+              value="1988-08-08"
+              type="date"
+              id="birthDate"
+              name="birthDate"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="birthTime">Birth Time:</label></td>
+          <td>
+            <input
+              value="22:00"
+              type="time"
+              id="birthTime"
+              name="birthTime"
+            />
+          </td>
+        </tr>
+      </table>
+      <button>Set</button>
+    </form>
+    <br />
+
+    <script src="js/util.js"></script>
+    <script src="js/user-prefs-controler.js"></script>
+    <script src="js/user-prefs-service.js"></script>
+  </body>
+</html>

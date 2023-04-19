@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="css/main.css"
+    />
+
+    <title>Map</title>
+  </head>
+  <body onload="getPosition()">
+    <h1>Map</h1>
+    <h2>
+      <a href="index.html">Back to main page</a>
+    </h2>
+    <h2>
+      <a href="user-prefs.html">User Preferences</a>
+    </h2>
+
+    <div
+      class="map"
+      style="width: 100%; height: 500px"
+    ></div>
+
+    <h2>Places:</h2>
+
+    <table>
+      <tbody class="place-container"></tbody>
+    </table>
+
+    <h2>Current Position:</h2>
+    <table border="1">
+      <tr>
+        <td>Latitude</td>
+        <td id="latitude"></td>
+      </tr>
+      <tr>
+        <td>Longitude</td>
+        <td id="longitude"></td>
+      </tr>
+      <tr>
+        <td>Accuracy</td>
+        <td id="accuracy"></td>
+      </tr>
+      <tr>
+        <td>Timestamp</td>
+        <td id="timestamp"></td>
+      </tr>
+    </table>
+
+    <p id="locationError"></p>
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeEHdMCpXmiNiXVrS7_bdfr2Cb4iAqXOg&callback=mapReady"
+    ></script>
+    <script src="js/util.js"></script>
+    <script src="js/map-service.js"></script>
+    <script src="js/map-controler.js"></script>
+  </body>
+</html>
